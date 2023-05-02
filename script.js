@@ -12,6 +12,7 @@ function generatePassword() {
   const special = window.confirm("Include special characters?");
   if(!(lowercase || uppercase || numbers || special)) {
     window.alert("I can't make a password like that. Try again");
+    return password;
   }
 
 
