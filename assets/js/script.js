@@ -10,7 +10,7 @@ function generatePassword() {
   const numbers = window.confirm("Include numbers?");
   const special = window.confirm("Include special characters?");
   if(!(lowercase || uppercase || numbers || special)) {
-    window.alert("I can't make a password like that. Try again");
+    window.alert("Please select at least at least one of the character types");
     return "";
   }
 
