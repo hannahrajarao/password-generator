@@ -1,11 +1,10 @@
 // Assignment code here
 function generatePassword() {
-  var password = "";
-  const passwordLength = window.prompt("Please enter a number for password length (8-128 characters)");
-  // TODO: add input validation for password
-  // while(isNumber(passwordLength)) {
-    
-  // }
+  var passwordLength = window.prompt("Please enter a number for password length (8-128 characters)");
+  // add input validation for password length
+  while(!isNumber(passwordLength) || passwordLength < 8 || passwordLength > 128) {
+    passwordLength = window.prompt("That is not a valid number. Please enter a number for password length (8-128 characters)");
+  }
   const lowercase = window.confirm("Include lower case characters?");
   const uppercase = window.confirm("Include upper case characters?");
   const numbers = window.confirm("Include numbers?");
