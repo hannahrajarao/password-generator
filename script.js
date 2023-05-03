@@ -22,6 +22,15 @@ function isNumber(n) {
   return !isNaN(n.trim());
 }
 
+function createPassword(characterString, passwordLength) {
+  var password = "";
+  for(var i=0; i < passwordLength; i++) {
+    var index = Math.floor(Math.random()*characterString.length);
+    password += characterString[index];
+  }
+  return password;
+}
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
