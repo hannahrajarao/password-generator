@@ -27,13 +27,11 @@ function generatePassword() {
     special  : [special, specialCharacters]
   }
   for (const [key, value] of Object.entries(passwordPossibilities)) {
-    console.log(value[0]);
     const includeChar = value[0];
     if(includeChar) {
       characterString += value[1];
     }
   }
-  console.log(characterString)
 
   return createPassword(characterString, passwordLength);
 }
