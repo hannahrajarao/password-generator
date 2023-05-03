@@ -15,7 +15,27 @@ function generatePassword() {
   }
 
 
-  return password
+  const lowerCharacters = "qwertyuiopasdfghjklzxcvbnm";
+  const upperCharacters = "QWERTYUIOPASDFGHJKLZXCVBNM";
+  const numberCharacters = "1234567890";
+  const specialCharacters = " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+  var characterString = "";
+  var passwordPossibilities = {
+    lowercase: [lowercase, lowerCharacters],
+    uppercase: [uppercase, upperCharacters],
+    numbers  : [numbers, numberCharacters],
+    special  : [special, specialCharacters]
+  }
+  for (const [key, value] of Object.entries(passwordPossibilities)) {
+    console.log(value[0]);
+    const includeChar = value[0];
+    if(includeChar) {
+      characterString += value[1];
+    }
+  }
+  console.log(characterString)
+
+  return createPassword(characterString, passwordLength);
 }
 
 function isNumber(n) {
